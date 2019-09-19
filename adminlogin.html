@@ -1,0 +1,62 @@
+<DOCTYPE>
+<html>
+<head>
+<style>
+.container {
+ padding: 170px 0;
+ text-align: center;
+
+  }
+</style>
+</head>
+<center>
+
+<body background="C:\Users\HP\Desktop\project\wallpaper.jpg">
+
+<div class="container">
+<div class="main">
+<img src="C:\Users\HP\Desktop\project\avatar.jpg">
+</br>
+</br>
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+</br>
+</br>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+</br>
+</br>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+</form>
+<!-- <span><b class="valid">User Name : Falcon<br/>Password : Falcon@123</b></span>  -->
+</div>
+</div>
+</body>
+<script>
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "Falcon" && password == "Falcon@123"){
+alert ("Login successfully");
+window.location = "success.html"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+	</center>
+	</html>
+	
